@@ -5,12 +5,15 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import ProductColorSelection from "./Screen/ProductColorSelection";
 
-const stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 export default function App() {
+
     return (
         <NavigationContainer>
-            {/*<ProductPage/>*/}
-            <ProductColorSelection/>
+            <Stack.Navigator>
+                <Stack.Screen name={"Sản Phẩm"} component={ProductPage}/>
+                <Stack.Screen name={"Color Select"} component={ProductColorSelection}/>
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }

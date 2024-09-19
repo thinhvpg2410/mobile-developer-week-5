@@ -1,16 +1,17 @@
 import React from 'react';
 import {TouchableOpacity, View, Text, Image, StyleSheet} from "react-native";
+import {productData} from "../productData";
 
 const ProductPage = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image
-                source={{uri: './assets/product/vs_silver.png'}}
+                source={{uri: productData.color.at(0)["image-url"]}}
                 style={styles.productImage}
             />
 
             <Text style={styles.productTitle}>
-                Điện Thoại Vsmart Joy 3 - Hàng chính hãng
+                {productData.name}
             </Text>
 
             <View style={styles.priceContainer}>
@@ -25,8 +26,8 @@ const ProductPage = ({navigation}) => {
             </View>
 
             <View style={styles.priceContainer}>
-                <Text style={styles.currentPrice}>1.790.000 đ</Text>
-                <Text style={styles.originalPrice}>1.790.000 đ</Text>
+                <Text style={styles.currentPrice}>{productData.price.toLocaleString()}đ</Text>
+                <Text style={styles.originalPrice}>1.990.000 đ</Text>
             </View>
             <View style={styles.priceContainer}>
                 <Text style={{
@@ -37,7 +38,9 @@ const ProductPage = ({navigation}) => {
 
             </View>
 
-            <TouchableOpacity style={styles.colorSelectionButton}>
+            <TouchableOpacity
+                style={styles.colorSelectionButton}
+                onPress={() => navigation.navigate('Color Select')}>
                 <Text style={{
                     textAlign: 'center',
                     color: '#333',
