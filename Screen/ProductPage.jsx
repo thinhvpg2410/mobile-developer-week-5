@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {TouchableOpacity, View, Text, Image, StyleSheet} from "react-native";
 import {productData} from "../productData";
 
-const ProductPage = ({navigation}) => {
+const ProductPage = ({navigation, route}) => {
+    const [selectedColor, setSelectedColor] = useState(productData.color[0]);
+    useEffect(() => {
+        if(route.params?.selectedColor){
+            setSelectedColor(route.params.selectedColor)
+        }
+    }, [route.params?.selectedColor]);
     return (
         <View style={styles.container}>
             <Image
-                source={{uri: productData.color.at(0)["image-url"]}}
+                source={{uri: selectedColor["image-url"]}}
                 style={styles.productImage}
             />
 

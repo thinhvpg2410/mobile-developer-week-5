@@ -3,9 +3,7 @@ import {View, Text, TouchableOpacity, StyleSheet, Image} from "react-native";
 import {productData} from "../productData";
 
 
-
 const ProductColorSelection = ({navigation}) => {
-    // const colors = ["#C5F1FB", "#F30D0D", "#000000", "#234896"]
     const [selectedColor, setSelectedColor] = useState(productData.color[0]);
     const handleColorSelect = (color) => {
         setSelectedColor(color);
@@ -47,7 +45,7 @@ const ProductColorSelection = ({navigation}) => {
 
                 <TouchableOpacity
                     style={styles.confirmButton}
-                    onPress={() => navigation.goBack()}
+                    onPress={() => navigation.navigate('Sản Phẩm', {selectedColor})}
                 >
                     <Text style={styles.confirmButtonText}>XONG</Text>
                 </TouchableOpacity>
