@@ -5,7 +5,7 @@ const ProductPage = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image
-                source={{uri: './assets/product/vs_silver.png'}} // Replace with actual image URL
+                source={{uri: './assets/product/vs_silver.png'}}
                 style={styles.productImage}
             />
 
@@ -13,7 +13,7 @@ const ProductPage = ({navigation}) => {
                 Điện Thoại Vsmart Joy 3 - Hàng chính hãng
             </Text>
 
-            <View style={styles.ratingContainer}>
+            <View style={styles.priceContainer}>
                 <Text style={{
                     fontSize: 24,
                     color: '#FFD700'
@@ -27,6 +27,14 @@ const ProductPage = ({navigation}) => {
             <View style={styles.priceContainer}>
                 <Text style={styles.currentPrice}>1.790.000 đ</Text>
                 <Text style={styles.originalPrice}>1.790.000 đ</Text>
+            </View>
+            <View style={styles.priceContainer}>
+                <Text style={{
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                    color: '#ff0000',
+                }}>Ở đâu rẻ hơn hoàn tiền </Text>
+
             </View>
 
             <TouchableOpacity style={styles.colorSelectionButton}>
@@ -60,16 +68,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 20,
     },
-    ratingContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 5,
-
-    },
     priceContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 10,
+
     },
     currentPrice: {
         fontSize: 20,
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 5,
         marginTop: 15,
-        verticalAlign:'bottom',
+        verticalAlign: 'bottom',
         justifyContent: 'flex-end',
 
     },
